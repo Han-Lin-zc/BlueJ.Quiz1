@@ -39,15 +39,18 @@ public class LoopFun
        *  'y' => 'b'
        * @param word
        * @return the encrypted string by shifting each character by three character
+       for every letter in this array, add three to it
+       if it reaches the end then starts over again
+
        */
       public String encrypt(String word) {
           char alphabet[]={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
-          for (int i = 0; i <= alphabet.length; i++) {
-            for (int j = 0; j < word.length(); j++)
-            if (alphabet[i] == word[j]) {
-              word += (word[i]);
-            }
+          for (int i = alphabet.length + 3; i <= 26; i++) {
+            String newStr = word.replaceAll(alphabet.toString(), "");
+            return newStr;
           }
-          return word;
+
+           return word;
+          }
+
       }
-}
